@@ -1,0 +1,87 @@
+.menu_button {
+  background-color: transparent;
+  border: none;
+}
+
+.mode_profile_container {
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  align-items: center;
+}
+
+.navbar_container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search_container {
+  border-radius: 10px;
+}
+
+.search_icon {
+  margin-top: 3px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  outline: none;
+}
+.switch input {
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #a3a3a6;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #a3a3a6;
+}
+input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+input {
+  background-color: transparent;
+}
+
+.icon {
+  font-size: 25px;
+}
+
+.mode_profile_container p {
+  margin-right: 10px;
+  margin-left: 2px;
+}
+
+.mode_profile_container svg {
+  margin-right: 9px;
+}

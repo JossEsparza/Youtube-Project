@@ -1,0 +1,27 @@
+.dark {
+  .icon {
+    color: #cbcccd;
+  }
+
+  .navbar_container {
+    background-color: #201f22;
+    box-shadow: 0px 2px 11px white;
+    border-bottom: 2px solid #535155;
+  }
+
+  .search_container {
+    border: 2px solid #535155;
+    background-color: #38373d;
+  }
+
+  .search_icon {
+    color: #d1d2d3;
+  }
+
+  input {
+    border: none;
+    color: #d1d2d3;
+    height: 20px;
+    width: 250px;
+  }
+}
