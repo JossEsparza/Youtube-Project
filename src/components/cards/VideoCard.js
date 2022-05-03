@@ -2,7 +2,6 @@ import React from 'react';
 import './VideoCard.scss';
 
 const VideoCard = ({ title, description, thumbnails }) => {
-  console.log(title, description, thumbnails);
   const { url } = thumbnails.high;
 
   return (

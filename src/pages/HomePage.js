@@ -7,7 +7,7 @@ export const HomePage = () => {
   const filtered_video = video_info.items.filter((video) => {
     return video.id.kind.includes('youtube#video');
   });
-  console.log(filtered_video);
+
   return (
     <div className="info_container">
       <div className="video_container">

@@ -15,7 +15,6 @@ const Navbar = () => {
     useContext(ToggleContext);
   const handleToggle = () => {
     setCurrentToggle(!currentToggle);
-    console.log('hola');
   };
 
   return (

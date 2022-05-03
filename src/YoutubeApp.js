@@ -7,6 +7,7 @@ import ToggleContext from './state/ToggleContext';
 const YoutubeApp = () => {
   const [currentToggle, setCurrentToggle] = useState(false);
   const [isEnabled, setIsEnabled] = useState(false);
+
   return (
     <div className={isEnabled ? 'dark' : 'light'}>
       <ToggleContext.Provider
