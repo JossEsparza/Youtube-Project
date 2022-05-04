@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { FaSearch, FaRegUserCircle, FaHamburger, FaAngleLeft } from 'react-icons/fa';
 import ToggleContext from '../../state/ToggleContext';
-import './navbar.css';
+import './navbar.scss';
 import './dark_navbar.scss';
 import './light_navbar.scss';
 

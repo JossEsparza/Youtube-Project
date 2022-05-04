@@ -73,6 +73,12 @@ input {
   background-color: transparent;
 }
 
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
 .icon {
   font-size: 25px;
 }
