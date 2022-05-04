@@ -10,8 +10,7 @@ const VideoPage = () => {
   const loading = 0;
 
   // const location = useLocation();
-  // const key = 'AIzaSyABmgpPt9OIaG3TfqS9HlzmUv54cDMFUQQ';
-
+  // const key = 'apikey';
   // const { data, loading, error } = useFetch(
   //   'https://www.googleapis.com/youtube/v3/videos?part=id, snippet,player&key=' +
   //     key +

@@ -5,7 +5,7 @@ import './HomePage.scss';
 
 export const HomePage = () => {
   const data = require('../mocks/youtube-videos-mock.json');
-  // const key = 'AIzaSyABmgpPt9OIaG3TfqS9HlzmUv54cDMFUQQ';
+  // const key = 'apikey';
   const error = 0;
   const loading = 0;
   // const { data, loading, error } = useFetch(

@@ -9,7 +9,7 @@ const RelatedVideos = () => {
   const error = 0;
   const loading = 0;
   // const location = useLocation();
-  // const key = 'AIzaSyABmgpPt9OIaG3TfqS9HlzmUv54cDMFUQQ';
+  // const key = 'apikey';
 
   // const { data, loading, error } = useFetch(
   //   'https://www.googleapis.com/youtube/v3/search?part=snippet&key=' +
