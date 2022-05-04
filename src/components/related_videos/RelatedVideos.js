@@ -9,11 +9,10 @@ const RelatedVideos = () => {
   const error = 0;
   const loading = 0;
   // const location = useLocation();
-  // const key = 'apikey';
 
   // const { data, loading, error } = useFetch(
   //   'https://www.googleapis.com/youtube/v3/search?part=snippet&key=' +
-  //     key +
+  //     process.env.REACT_APP_YOUTUBE_API_KEY +
   //     '&relatedToVideoId=' +
   //     location.pathname.substring(1) +
   //     '&type=video'

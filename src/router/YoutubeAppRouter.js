@@ -16,8 +16,8 @@ export const YoutubeAppRouter = () => {
         {currentToggle && <Sidebar />}
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/" component={VideoPage} />
           <Route exact path="/favorites" component={FavoritePage} />
+          <Route path="/" component={VideoPage} />
           <Redirect to="/" />
         </Switch>
       </div>

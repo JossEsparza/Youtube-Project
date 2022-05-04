@@ -5,12 +5,11 @@ import './HomePage.scss';
 
 export const HomePage = () => {
   const data = require('../mocks/youtube-videos-mock.json');
-  // const key = 'apikey';
   const error = 0;
   const loading = 0;
   // const { data, loading, error } = useFetch(
   //   'https://www.googleapis.com/youtube/v3/search?part=id,snippet&maxResults=15&q=tenis&key=' +
-  //     key
+  // process.env.REACT_APP_YOUTUBE_API_KEY;
   // );
 
   if (error) {
