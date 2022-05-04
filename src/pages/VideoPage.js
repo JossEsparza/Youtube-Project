@@ -31,7 +31,7 @@ const VideoPage = () => {
         <p>Loading!</p>
       ) : (
         <div className="video_page_info_container">
-          <div className="video_player">
+          <div className="video_elements_container">
             <iframe
               title={items[0].id}
               width="100%"
@@ -44,11 +44,13 @@ const VideoPage = () => {
                 'encrypted-media; gyroscope; picture-in-picture'
               }
             />
-            <h3>{items[0].snippet.title}</h3>
-            <p className="channel_icon">
-              <GrChannel /> {items[0].snippet.channelTitle}
-            </p>
-            <span>Description: {items[0].snippet.description}</span>
+            <div className="video_player">
+              <h3>{items[0].snippet.title}</h3>
+              <p className="channel_icon">
+                <GrChannel /> {items[0].snippet.channelTitle}
+              </p>
+              <span>Description: {items[0].snippet.description}</span>
+            </div>
           </div>
           <RelatedVideos />
         </div>
