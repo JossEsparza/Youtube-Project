@@ -12,14 +12,11 @@ export const useFetch = (url) => {
       setLoading(true);
 
       try {
-        console.log('antes del fetch');
         const response = await fetch(url, { signal: controller.signal });
         const result = await response.json();
-        console.log('despues del fetch');
         setData(result);
       } catch (error) {
         setError(error);
-        console.log(error);
       }
       setLoading(false);
     };

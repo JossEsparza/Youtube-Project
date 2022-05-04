@@ -1,16 +1,23 @@
 import React from 'react';
+import { useContext } from 'react';
 import VideoCard from '../components/cards/VideoCard';
-// import { useFetch } from '../hooks/useFetch';
+import ToggleContext from '../state/ToggleContext';
+import { useFetch } from '../hooks/useFetch';
 import './HomePage.scss';
 
 export const HomePage = () => {
-  const data = require('../mocks/youtube-videos-mock.json');
-  const error = 0;
-  const loading = 0;
-  // const { data, loading, error } = useFetch(
-  //   'https://www.googleapis.com/youtube/v3/search?part=id,snippet&maxResults=15&q=tenis&key=' +
-  // process.env.REACT_APP_YOUTUBE_API_KEY;
-  // );
+  // For testing purpose:
+  // const data = require('../mocks/youtube-videos-mock.json');
+  // const error = 0;
+  // const loading = 0;
+
+  const { inputValue } = useContext(ToggleContext);
+  const { data, loading, error } = useFetch(
+    'https://www.googleapis.com/youtube/v3/search?part=id,snippet&maxResults=15&q=' +
+      inputValue +
+      '&key=' +
+      process.env.REACT_APP_YOUTUBE_API_KEY
+  );
 
   if (error) {
     return <p>{error.message}</p>;

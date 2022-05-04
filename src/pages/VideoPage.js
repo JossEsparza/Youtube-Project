@@ -1,23 +1,24 @@
 import React from 'react';
-// import { useFetch } from '../hooks/useFetch';
-// import { useLocation } from 'react-router-dom';
+import { useFetch } from '../hooks/useFetch';
+import { useLocation } from 'react-router-dom';
 import RelatedVideos from '../components/related_videos/RelatedVideos';
 import { GrChannel } from 'react-icons/gr';
 import './VideoPage.scss';
 
 const VideoPage = () => {
-  const data = require('../mocks/youtube-specific-video-mock.json');
-  const error = 0;
-  const loading = 0;
+  // For testing purpose
+  // const data = require('../mocks/youtube-specific-video-mock.json');
+  // const error = 0;
+  // const loading = 0;
 
-  // const location = useLocation();
+  const location = useLocation();
 
-  // const { data, loading, error } = useFetch(
-  //   'https://www.googleapis.com/youtube/v3/videos?part=id, snippet,player&key=' +
-  //     process.env.REACT_APP_YOUTUBE_API_KEY +
-  //     '&id=' +
-  //     location.pathname.substring(1)
-  // );
+  const { data, loading, error } = useFetch(
+    'https://www.googleapis.com/youtube/v3/videos?part=id, snippet,player&key=' +
+      process.env.REACT_APP_YOUTUBE_API_KEY +
+      '&id=' +
+      location.pathname.substring(1)
+  );
 
   const { items } = data;
 

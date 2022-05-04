@@ -8,11 +8,19 @@ import './light_navbar.scss';
 
 const Navbar = () => {
   const [search, setSearch] = useState('');
+  const { currentToggle, setCurrentToggle, isEnabled, setIsEnabled, setInputValue } =
+    useContext(ToggleContext);
+
   const handleInputChange = ({ target }) => {
     setSearch(target.value);
   };
-  const { currentToggle, setCurrentToggle, isEnabled, setIsEnabled } =
-    useContext(ToggleContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (search.trim().length > 2) {
+      setInputValue(search);
+      setSearch('');
+    }
+  };
   const handleToggle = () => {
     setCurrentToggle(!currentToggle);
   };
@@ -23,8 +31,10 @@ const Navbar = () => {
         {currentToggle ? <FaAngleLeft /> : <FaHamburger />}
       </button>
       <div className="search_container">
-        <input value={search} onChange={handleInputChange} placeholder="Search" />
-        <FaSearch className="search_icon" />
+        <form onSubmit={handleSubmit}>
+          <input value={search} onChange={handleInputChange} placeholder="Search" />
+          <FaSearch className="search_icon" />
+        </form>
       </div>
       <div className="mode_profile_container icon">
         <label className="switch">
