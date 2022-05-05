@@ -50,7 +50,7 @@ const VideoPage = () => {
               <p className="channel_icon">
                 <GrChannel /> {items[0].snippet.channelTitle}
               </p>
-              <span>Description: {items[0].snippet.description}</span>
+              <span>{items[0].snippet.description}</span>
             </div>
           </div>
           <RelatedVideos />

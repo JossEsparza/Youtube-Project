@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { FaSearch, FaRegUserCircle, FaHamburger, FaAngleLeft } from 'react-icons/fa';
 import ToggleContext from '../../state/ToggleContext';
+import { useHistory } from 'react-router-dom';
 import './navbar.scss';
 import './dark_navbar.scss';
 import './light_navbar.scss';
@@ -14,9 +15,13 @@ const Navbar = () => {
   const handleInputChange = ({ target }) => {
     setSearch(target.value);
   };
+
+  const navigate = useHistory();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (search.trim().length > 2) {
+      navigate.push('/');
       setInputValue(search);
       setSearch('');
     }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import Navbar from './components/navbar/Navbar';
 import { YoutubeAppRouter } from './router/YoutubeAppRouter';
 import ToggleContext from './state/ToggleContext';
 
@@ -21,7 +20,6 @@ const YoutubeApp = () => {
           setInputValue,
         }}
       >
-        <Navbar />
         <YoutubeAppRouter />
       </ToggleContext.Provider>
     </div>
