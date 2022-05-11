@@ -2,17 +2,28 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { FaSearch, FaRegUserCircle, FaHamburger, FaAngleLeft } from 'react-icons/fa';
 import ToggleContext from '../../state/ToggleContext';
-import './navbar.css';
+import { useHistory } from 'react-router-dom';
+import './navbar.scss';
 import './dark_navbar.scss';
 import './light_navbar.scss';
 
 const Navbar = () => {
   const [search, setSearch] = useState('');
+  const { currentToggle, setCurrentToggle, isEnabled, setIsEnabled, setInputValue } =
+    useContext(ToggleContext);
+
   const handleInputChange = ({ target }) => {
     setSearch(target.value);
   };
-  const { currentToggle, setCurrentToggle, isEnabled, setIsEnabled } =
-    useContext(ToggleContext);
+
+  const navigate = useHistory();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate.push('/');
+    setInputValue(search);
+    setSearch('');
+  };
   const handleToggle = () => {
     setCurrentToggle(!currentToggle);
   };
@@ -23,8 +34,10 @@ const Navbar = () => {
         {currentToggle ? <FaAngleLeft /> : <FaHamburger />}
       </button>
       <div className="search_container">
-        <input value={search} onChange={handleInputChange} placeholder="Search" />
-        <FaSearch className="search_icon" />
+        <form onSubmit={handleSubmit}>
+          <input value={search} onChange={handleInputChange} placeholder="Search" />
+          <FaSearch className="search_icon" />
+        </form>
       </div>
       <div className="mode_profile_container icon">
         <label className="switch">

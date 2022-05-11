@@ -1,0 +1,38 @@
+.related_video_container {
+  // margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  img {
+    width: 250px;
+    margin-bottom: 7px;
+  }
+}
+
+.related_video_content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 6px;
+  span {
+    margin-top: -12px;
+  }
+}
+
+h4 {
+  width: 230px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dark {
+  svg path {
+    stroke: #d1d2d3;
+  }
+}
+
+.light {
+  h4 {
+    color: #383f44;
+  }
+}
