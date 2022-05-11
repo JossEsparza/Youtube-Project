@@ -19,7 +19,7 @@ export const YoutubeAppRouter = () => {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/favorites" component={FavoritePage} />
-          <Route path="/" component={VideoPage} />
+          <Route path="/:video_id" component={VideoPage} />
           <Redirect to="/" />
         </Switch>
       </div>

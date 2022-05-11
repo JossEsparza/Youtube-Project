@@ -20,11 +20,9 @@ const Navbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (search.trim().length > 2) {
-      navigate.push('/');
-      setInputValue(search);
-      setSearch('');
-    }
+    navigate.push('/');
+    setInputValue(search);
+    setSearch('');
   };
   const handleToggle = () => {
     setCurrentToggle(!currentToggle);

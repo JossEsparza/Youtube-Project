@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import RelatedVideos from '../components/related_videos/RelatedVideos';
 import { GrChannel } from 'react-icons/gr';
 import './VideoPage.scss';
+import Loading from '../components/loading/Loading';
 
 const VideoPage = () => {
   // For testing purpose
@@ -29,7 +30,7 @@ const VideoPage = () => {
   return (
     <div className="video_page_container">
       {loading ? (
-        <p>Loading!</p>
+        <Loading />
       ) : (
         <div className="video_page_info_container">
           <div className="video_elements_container">

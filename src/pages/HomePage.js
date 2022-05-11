@@ -4,6 +4,7 @@ import VideoCard from '../components/cards/VideoCard';
 import ToggleContext from '../state/ToggleContext';
 import { useFetch } from '../hooks/useFetch';
 import './HomePage.scss';
+import Loading from '../components/loading/Loading';
 
 export const HomePage = () => {
   // For testing purpose:
@@ -31,7 +32,7 @@ export const HomePage = () => {
     <div className="info_container">
       <div className="video_container">
         {loading ? (
-          <p>Loading!</p>
+          <Loading />
         ) : (
           filtered_video.map((video) => <VideoCard key={video.id.videoId} {...video} />)
         )}

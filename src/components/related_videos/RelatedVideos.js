@@ -3,6 +3,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { useLocation } from 'react-router-dom';
 import RelatedVideoCard from '../cards/RelatedVideoCard';
 import './RelatedVideos.scss';
+import Loading from '../loading/Loading';
 
 const RelatedVideos = () => {
   // For testing purpose:
@@ -32,7 +33,7 @@ const RelatedVideos = () => {
     <div>
       <div className="related_container">
         {loading ? (
-          <p>Loading!</p>
+          <Loading />
         ) : (
           filtered_video.map((video) => (
             <RelatedVideoCard key={video.id.videoId} {...video} />
