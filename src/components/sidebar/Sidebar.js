@@ -1,12 +1,15 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import ToggleContext from '../../state/ToggleContext';
+import { ToggleContext } from '../../state/ToggleContext';
 import './Sidebar.scss';
 
 export const Sidebar = () => {
-  const { setInputValue } = useContext(ToggleContext);
+  const { dispatch } = useContext(ToggleContext);
   const handleChange = () => {
-    setInputValue('wizeline');
+    dispatch({
+      type: 'set-input',
+      payload: 'changuitos',
+    });
   };
   return (
     <nav className="sidebar_container">

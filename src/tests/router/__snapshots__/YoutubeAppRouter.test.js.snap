@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests the routes should be displayed correctly 1`] = `ReactWrapper {}`;
+
+exports[`Tests the routes should be displayed correctly with currentToggle=true 1`] = `ReactWrapper {}`;

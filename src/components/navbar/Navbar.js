@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { FaSearch, FaRegUserCircle, FaHamburger, FaAngleLeft } from 'react-icons/fa';
-import ToggleContext from '../../state/ToggleContext';
+import { ToggleContext } from '../../state/ToggleContext';
 import { useHistory } from 'react-router-dom';
 import './navbar.scss';
 import './dark_navbar.scss';
@@ -9,8 +9,7 @@ import './light_navbar.scss';
 
 const Navbar = () => {
   const [search, setSearch] = useState('');
-  const { currentToggle, setCurrentToggle, isEnabled, setIsEnabled, setInputValue } =
-    useContext(ToggleContext);
+  const { globalReducer, dispatch } = useContext(ToggleContext);
 
   const handleInputChange = ({ target }) => {
     setSearch(target.value);
@@ -21,17 +20,35 @@ const Navbar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate.push('/');
-    setInputValue(search);
+    const action = {
+      type: 'set-input',
+      payload: search,
+    };
+
+    dispatch(action);
     setSearch('');
   };
+
   const handleToggle = () => {
-    setCurrentToggle(!currentToggle);
+    const action = {
+      type: 'toggle',
+      payload: !globalReducer.currentToggle,
+    };
+    dispatch(action);
+  };
+
+  const handleThemeToggle = () => {
+    const action = {
+      type: 'toggle-theme',
+      payload: !globalReducer.isEnabled,
+    };
+    dispatch(action);
   };
 
   return (
     <div className="navbar_container">
       <button onClick={handleToggle} className="menu_button icon">
-        {currentToggle ? <FaAngleLeft /> : <FaHamburger />}
+        {globalReducer.currentToggle ? <FaAngleLeft /> : <FaHamburger />}
       </button>
       <div className="search_container">
         <form onSubmit={handleSubmit}>
@@ -41,11 +58,7 @@ const Navbar = () => {
       </div>
       <div className="mode_profile_container icon">
         <label className="switch">
-          <input
-            type="checkbox"
-            value={isEnabled}
-            onChange={() => setIsEnabled(!isEnabled)}
-          />
+          <input type="checkbox" onChange={handleThemeToggle} />
           <div className="slider" />
         </label>
         <p>Dark mode</p>

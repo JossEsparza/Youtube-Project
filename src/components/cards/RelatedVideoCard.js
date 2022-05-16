@@ -7,6 +7,7 @@ const RelatedVideoCard = ({ id, snippet }) => {
   const { videoId } = id;
   const { title, channelTitle, thumbnails } = snippet;
   const { medium } = thumbnails;
+
   return (
     <Link to={`/${videoId}`}>
       <div className="related_video_container">

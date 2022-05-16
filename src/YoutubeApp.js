@@ -1,23 +1,24 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useReducer } from 'react';
+import reducer from './components/reducer/reducer';
 import { YoutubeAppRouter } from './router/YoutubeAppRouter';
-import ToggleContext from './state/ToggleContext';
+import { ToggleContext } from './state/ToggleContext';
 
+const initialState = () => {
+  return {
+    inputValue: 'changuitos',
+    currentToggle: false,
+    isEnabled: false,
+  };
+};
 const YoutubeApp = () => {
-  const [currentToggle, setCurrentToggle] = useState(false);
-  const [isEnabled, setIsEnabled] = useState(false);
-  const [inputValue, setInputValue] = useState('wizeline');
+  const [globalReducer, dispatch] = useReducer(reducer, {}, initialState);
 
   return (
-    <div className={isEnabled ? 'dark' : 'light'}>
+    <div className={globalReducer.isEnabled ? 'dark' : 'light'}>
       <ToggleContext.Provider
         value={{
-          currentToggle,
-          setCurrentToggle,
-          isEnabled,
-          setIsEnabled,
-          inputValue,
-          setInputValue,
+          globalReducer,
+          dispatch,
         }}
       >
         <YoutubeAppRouter />

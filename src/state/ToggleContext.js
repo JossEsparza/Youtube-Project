@@ -1,5 +1,3 @@
 import React from 'react';
 
-const ToggleContext = React.createContext();
-
-export default ToggleContext;
+export const ToggleContext = React.createContext();
