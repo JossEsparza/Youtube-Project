@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests the Video Page should be displayed correctly when loading is false 1`] = `ReactWrapper {}`;
+
+exports[`Tests the Video Page should be displayed correctly when loading is true 1`] = `ReactWrapper {}`;

@@ -13,6 +13,7 @@ export const HomePage = () => {
   // const loading = 0;
 
   const { globalReducer } = useContext(ToggleContext);
+
   const { data, loading, error } = useFetch(
     'https://www.googleapis.com/youtube/v3/search?part=id,snippet&maxResults=15&q=' +
       globalReducer.inputValue +

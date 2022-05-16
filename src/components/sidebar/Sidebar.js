@@ -8,7 +8,7 @@ export const Sidebar = () => {
   const handleChange = () => {
     dispatch({
       type: 'set-input',
-      payload: 'wizeline',
+      payload: 'changuitos',
     });
   };
   return (

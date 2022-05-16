@@ -5,13 +5,13 @@ import { ToggleContext } from './state/ToggleContext';
 
 const initialState = () => {
   return {
+    inputValue: 'changuitos',
     currentToggle: false,
     isEnabled: false,
-    inputValue: 'wizeline',
   };
 };
 const YoutubeApp = () => {
-  const [globalReducer, dispatch] = useReducer(reducer, initialState);
+  const [globalReducer, dispatch] = useReducer(reducer, {}, initialState);
 
   return (
     <div className={globalReducer.isEnabled ? 'dark' : 'light'}>

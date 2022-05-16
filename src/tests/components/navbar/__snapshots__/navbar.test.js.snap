@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests the Navbar should be displayed correctly 1`] = `ReactWrapper {}`;
